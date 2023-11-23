@@ -1,4 +1,5 @@
 import { useNavbar } from "../context/navbarContext";
+import styles from './styles.module.css';
 
 
 const Navbar: React.FC = () => {
@@ -13,7 +14,8 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav>
+    <nav className={styles.navbar}>
+      <h2>Battle Meta Human</h2>
       <ul>
         <li
           className={selected === 'Home' ? 'active' : ''}
@@ -22,10 +24,16 @@ const Navbar: React.FC = () => {
           Home
         </li>
         <li
-          className={selected === 'Heroes' ? 'active' : ''}
-          onClick={() => handleItemClick('Heroes')}
+          className={selected === 'Marvel' ? 'active' : ''}
+          onClick={() => handleItemClick('Marvel')}
         >
-          Heroes
+          Marvel
+        </li>
+        <li
+          className={selected === 'DC' ? 'active' : ''}
+          onClick={() => handleItemClick('DC')}
+        >
+          DC
         </li>
       </ul>
       <input
