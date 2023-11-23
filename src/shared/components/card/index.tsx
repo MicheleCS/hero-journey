@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-
+import styles from './styles.module.css';
 interface CardProps {
   name: string;
   description: string;
@@ -26,7 +26,7 @@ const ActionAreaCard: React.FC<CardProps> = ({
   powerstats
 }: CardProps) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ Width: 345 }} className={styles.card}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -35,7 +35,7 @@ const ActionAreaCard: React.FC<CardProps> = ({
           alt={name}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography  component="div">
             {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">

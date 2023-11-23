@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import ActionAreaCard from '../../shared/components/card';
 import { MetaHuman } from './interface';
-
+import styles from './styles.module.css';
 
 
 export const Marvel = () => {
@@ -36,9 +36,9 @@ export const Marvel = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       {heroes.map((hero, index) => (
-        <div key={index}>
+        <div key={index} className={styles.marvelCard}>
           <ActionAreaCard
             name={hero.name}
             description={hero.publisher}
@@ -83,9 +83,9 @@ export const DC = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       {heroes.map((hero, index) => (
-        <div key={index}>
+        <div key={index} className={styles.dcCard}>
           <ActionAreaCard
             name={hero.name}
             description={hero.publisher}

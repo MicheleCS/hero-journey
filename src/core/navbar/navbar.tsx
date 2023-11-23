@@ -1,33 +1,40 @@
+import { Link } from "react-router-dom";
 import { useNavbar } from "../context/navbarContext";
+import styles from './styles.module.css';
 
 
 const Navbar: React.FC = () => {
-  const { selected, setSelected, searchQuery, setSearchQuery } = useNavbar();
+  const { selected, searchQuery, setSearchQuery } = useNavbar();
 
-  const handleItemClick = (item: string) => {
-    setSelected(item === selected ? null : item);
-  };
+
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
   };
 
   return (
-    <nav>
-      <ul>
-        <li
+    <nav className={styles.navbar}>
+      <h2>Battle Meta Human</h2>
+
+        <Link
           className={selected === 'Home' ? 'active' : ''}
-          onClick={() => handleItemClick('Home')}
+          to={"/"}
         >
-          Home
-        </li>
-        <li
-          className={selected === 'Heroes' ? 'active' : ''}
-          onClick={() => handleItemClick('Heroes')}
+           <h3>HOME</h3>
+        </Link>
+        <Link
+          className={selected === 'Marvel' ? 'active' : ''}
+          to={"/marvel"}
         >
-          Heroes
-        </li>
-      </ul>
+          <h3>MARVEL</h3>
+        </Link>
+        <Link
+          className={selected === 'DC' ? 'active' : ''}
+          to={"/dc"}
+        >
+          <h3>DC</h3>
+        </Link>
+  
       <input
         type="text"
         placeholder="Pesquisar Herói"
