@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ActionAreaCard from '../../shared/components/card';
+import styles from './styles.module.css';
 
 const Home = () => {
   const [heroes, setHeroes] = useState<any[]>([]);
@@ -30,12 +31,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.homeContainer}>
       {heroes.map((hero, index) => (
-        <div key={index}>
+        <div key={index} className={styles.homeCard}>
           <ActionAreaCard
             name={hero.name}
-            description={`Publisher: ${hero.publisher}`}
+            description={hero.publisher}
             image={hero.imageSm}
           />
         </div>
