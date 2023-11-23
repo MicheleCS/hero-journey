@@ -34,6 +34,12 @@ const Navbar: React.FC = () => {
         >
           <h3>DC</h3>
         </Link>
+        <Link
+          className={selected === 'Battle' ? 'active' : ''}
+          to={"/Battle"}
+        >
+          <h3>BATTLE</h3>
+        </Link>
   
       <input
         type="text"
