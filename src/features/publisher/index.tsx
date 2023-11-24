@@ -68,9 +68,9 @@ export const DC = () => {
             imageSm: hero.images.sm
           }));
 
-          const marvelHeroes: MetaHuman[] = extractedData.filter((hero: MetaHuman) => hero.publisher === "DC Comics");
+          const dcHeroes: MetaHuman[] = extractedData.filter((hero: MetaHuman) => hero.publisher === "DC Comics");
 
-          setHeroes(marvelHeroes);
+          setHeroes(dcHeroes);
         } else {
           throw new Error('Failed to fetch data');
         }

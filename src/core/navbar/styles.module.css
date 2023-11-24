@@ -12,19 +12,44 @@
 }
 
 
-.navbar input {
-  padding: 0.2rem 0.8rem;
-  border-radius: 4px;
-  border: none;
-  height: 30px;
+.links {
+  display: flex;
 }
 
-.navbar button {
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  border-radius: 4px;
+.links a {
+  margin-right: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+form {
   display: flex;
   align-items: center;
-  color: aliceblue;
 }
+
+input[type="text"] {
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+button[type="submit"] {
+  padding: 8px 16px;
+  background-color: #fdd406;
+  color: #180808;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button[type="submit"]:hover {
+  background-color: rgba(254, 240, 38, 0.381);
+}
+

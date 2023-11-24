@@ -1,0 +1,27 @@
+.battleContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+ padding: 20px;
+  width: 100%;
+}
+
+.battleCard {
+  flex: 0 0 calc(25.33% - 20px);
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 8px; 
+  transition: transform 0.3s ease;
+  padding-left: 60px;
+}
+
+.battleCard:hover {
+  transform: translateY(-5px);
+  background-color: #fdd406;
+}
+
+.selected {
+  border-color: rgb(190, 12, 12); 
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  background-color: #fdd406;
+}
