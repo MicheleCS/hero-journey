@@ -31,11 +31,11 @@ const Navbar = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Search Meta Human"
+          placeholder="Buscar Meta Humano"
           value={search}
           onChange={handleSearchChange}
         />
-        <button type="submit">submit</button>
+        <button type="submit">pesquisar</button>
       </form>
     </nav>
   );

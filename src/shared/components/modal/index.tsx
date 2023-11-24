@@ -4,11 +4,12 @@ import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-
 interface ModalProps {
+  open: boolean;
+  handleClose?: () => void;
   name: string;
-  description: string;
-  image: string;
+  description?: string;
+  image?: string;
 }
 
 const style = {
@@ -18,35 +19,34 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 400,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
+  border: '10px solid #fdd406',
   boxShadow: 24,
   p: 4,
 };
 
-export default function KeepMountedModal() {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
+const CustomModal: React.FC<ModalProps> = ({ open, handleClose, name, description, image }) => {
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         keepMounted
         open={open}
         onClose={handleClose}
-        aria-labelledby="keep-mounted-modal-title"
-        aria-describedby="keep-mounted-modal-description"
+        aria-labelledby="custom-modal-title"
+        aria-describedby="custom-modal-description"
       >
         <Box sx={style}>
-          <Typography id="keep-mounted-modal-title" variant="h6" component="h2">
-            Text in a modal
+          <Typography id="custom-modal-title" variant="h4" component="h2">
+            {name}
           </Typography>
-          <Typography id="keep-mounted-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          <Typography id="custom-modal-description" sx={{ mt: 2 }}>
+            {description}
           </Typography>
+          <img src={image} alt={name} style={{ maxWidth: '100%', margin: '20px', marginLeft: '80px' }} />
+          <Button onClick={handleClose} style={{ marginTop: '10px', color: '#fdd406' }}>Fechar</Button>
         </Box>
       </Modal>
     </div>
   );
-}
+};
+
+export default CustomModal;

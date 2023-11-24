@@ -37,6 +37,7 @@ export const Marvel = () => {
 
   return (
     <div className={styles.container}>
+      {heroes.length === 0 && <p>Carregando...</p>}
       {heroes.map((hero, index) => (
         <div key={index} className={styles.marvelCard}>
           <ActionAreaCard
@@ -84,6 +85,7 @@ export const DC = () => {
 
   return (
     <div className={styles.container}>
+      {heroes.length === 0 && <p>Carregando...</p>}
       {heroes.map((hero, index) => (
         <div key={index} className={styles.dcCard}>
           <ActionAreaCard

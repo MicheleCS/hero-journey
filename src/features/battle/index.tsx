@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react';
 import ActionAreaCard from '../../shared/components/card';
 import styles from './styles.module.css';
 import { sumPowerstats } from '../../shared/components/sumPowerstats';
-import { Modal } from '@mui/material';
+import CustomModal from '../../shared/components/modal';
+
 
 const Battle = () => {
   const [heroes, setHeroes] = useState<any[]>([]);
   const [selectedHeroes, setSelectedHeroes] = useState<any[]>([]);
   const [winner, setWinner] = useState<string>('');
+  const [winnerDetails, setWinnerDetails] = useState<any | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,9 +57,10 @@ const Battle = () => {
       const score2 = totalPowerstats.durability + totalPowerstats.power + totalPowerstats.combat;
 
       if (score1 > score2) {
-        return `${selectedHeroes[0].name} é o vencedor!`;
+        return `${selectedHeroes[0].name} Venceu!`;
       } else if (score1 < score2) {
-        return `${selectedHeroes[1].name} é o vencedor!`;
+        setWinnerDetails(selectedHeroes[1]);
+        return `${selectedHeroes[1].name} Veceu!`;
       } else {
         return 'Empate!';
       }
@@ -67,6 +70,7 @@ const Battle = () => {
 
   return (
     <div className={styles.battleContainer}>
+      {heroes.length === 0 && <p>Carregando...</p>}
       {heroes.map((hero, index) => (
         <div
           key={index}
@@ -80,11 +84,18 @@ const Battle = () => {
           />
         </div>
       ))}
-      {selectedHeroes.length === 2 && (
-        <div className={styles.result}>
-          <h3>Resultado:</h3>
-          <p>{winner}</p>
-        </div>
+      {selectedHeroes.length === 2 && winnerDetails && (
+        <CustomModal
+          open={true}
+          handleClose={() => {
+            setWinnerDetails(null);
+            setSelectedHeroes([]); 
+            setWinner(''); 
+          }}
+          name={winner}
+          description={winnerDetails.publisher}
+          image={winnerDetails.imageSm}
+        />
       )}
     </div>
   );
