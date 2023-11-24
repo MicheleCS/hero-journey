@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from './styles.module.css';
 import { useState } from 'react';
+import vs from '../../shared/assets/vs.png';
 
 const Navbar = () => {
   const [search, setSearch] = useState<string>('');
@@ -21,7 +22,7 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <h2>Battle Meta Human</h2>
+      <img src={vs} alt="" />
       <div className={styles.links}>
         <Link to={"/"}><h3>HOME</h3></Link>
         <Link to={"/marvel"}><h3>MARVEL</h3></Link>

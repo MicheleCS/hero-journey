@@ -6,6 +6,12 @@
   background-color: black;
   color: #fdd406;
 }
+
+.navbar img {
+  height: 80px;
+  width: 100px;
+}
+
 .navbar h3 {
   color: #fff;
   display: flex;

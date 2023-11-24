@@ -42,7 +42,6 @@ export const Marvel = () => {
         <div key={index} className={styles.marvelCard}>
           <ActionAreaCard
             name={hero.name}
-            description={hero.publisher}
             image={hero.imageSm}
             powerstats={hero.powerstats}
           />
@@ -90,7 +89,6 @@ export const DC = () => {
         <div key={index} className={styles.dcCard}>
           <ActionAreaCard
             name={hero.name}
-            description={hero.publisher}
             image={hero.imageSm}
             powerstats={hero.powerstats}
           />

@@ -8,8 +8,8 @@ interface ModalProps {
   open: boolean;
   handleClose?: () => void;
   name: string;
-  description?: string;
-  image?: string;
+  description: string;
+  image: string;
 }
 
 const style = {

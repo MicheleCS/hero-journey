@@ -2,7 +2,6 @@
   flex: 0 0 auto;
   width: 200px; 
   scroll-snap-align: start;
-  padding: 20px;
   margin: 10px;
   border: 5px solid #fdd406;
 }

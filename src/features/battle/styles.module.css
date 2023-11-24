@@ -3,16 +3,15 @@
   flex-wrap: wrap;
   gap: 20px;
  padding: 20px;
-  width: 100%;
+
+justify-content: center;
 }
 
 .battleCard {
-  flex: 0 0 calc(25.33% - 20px);
   cursor: pointer;
   border: 1px solid #ccc;
   border-radius: 8px; 
-  transition: transform 0.3s ease;
-  padding-left: 60px;
+  transition: transform 0.3s ease;;
 }
 
 .battleCard:hover {
