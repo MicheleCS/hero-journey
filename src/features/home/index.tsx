@@ -4,6 +4,7 @@ import styles from './styles.module.css';
 
 const Home = () => {
   const [heroes, setHeroes] = useState<any[]>([]);
+  const [errorPopup, setErrorPopup] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,6 +25,7 @@ const Home = () => {
         }
       } catch (error) {
         console.error('Error fetching data:', error);
+        setErrorPopup(true);
       }
     };
 
@@ -32,6 +34,11 @@ const Home = () => {
 
   return (
     <div className={styles.homeContainer}>
+        {errorPopup && (
+        <div className="popup">
+          <p>Communication failure with the api. Please try again later.</p>
+        </div>
+      )}
       {heroes.map((hero, index) => (
         <div key={index} className={styles.homeCard}>
           <ActionAreaCard
