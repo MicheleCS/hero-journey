@@ -1,6 +1,5 @@
 import { useLocation } from 'react-router-dom';
 import ActionAreaCard from '../../shared/components/card';
-import styles from './styles.module.css';
 import { MetaHuman } from '../publisher/interface';
 import { useState, useEffect} from 'react';
 
@@ -42,13 +41,13 @@ export const SearchResults = () => {
   }, [query]);
 
   return (
-    <div className={styles.searchContainer}>
+    <div>
       <h2>
         Resultados para <span>{query}</span>
       </h2>
-      <div className={styles.searchCards}>
+      <div>
         {filteredMetaHumans.map((filteredMetaHuman, index) => (
-          <div key={index} className={styles.searchCard}>
+          <div key={index}>
             <ActionAreaCard
               name={filteredMetaHuman.name}
               description={filteredMetaHuman.publisher}
