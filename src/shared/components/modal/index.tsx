@@ -19,7 +19,7 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 400,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
+  border: '10px solid #fdd406',
   boxShadow: 24,
   p: 4,
 };
@@ -42,7 +42,7 @@ const CustomModal: React.FC<ModalProps> = ({ open, handleClose, name, descriptio
             {description}
           </Typography>
           <img src={image} alt={name} style={{ maxWidth: '100%', margin: '20px', marginLeft: '80px' }} />
-          <Button onClick={handleClose} style={{ marginTop: '10px' }}>Fechar</Button>
+          <Button onClick={handleClose} style={{ marginTop: '10px', color: '#fdd406' }}>Fechar</Button>
         </Box>
       </Modal>
     </div>
