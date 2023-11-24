@@ -39,6 +39,7 @@ const Home = () => {
           <p>Communication failure with the api. Please try again later.</p>
         </div>
       )}
+      {heroes.length === 0 && <p>Carregando...</p>}
       {heroes.map((hero, index) => (
         <div key={index} className={styles.homeCard}>
           <ActionAreaCard

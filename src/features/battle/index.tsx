@@ -70,6 +70,7 @@ const Battle = () => {
 
   return (
     <div className={styles.battleContainer}>
+      {heroes.length === 0 && <p>Carregando...</p>}
       {heroes.map((hero, index) => (
         <div
           key={index}
