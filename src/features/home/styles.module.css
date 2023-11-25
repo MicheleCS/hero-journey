@@ -1,17 +1,15 @@
 .container {
- text-align: end;
+  text-align: end;
 }
 
-
-.contant{
+.contant {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
-  gap: 20px; 
-  scroll-snap-type: y mandatory; 
-  height: 460px; 
+  gap: 20px;
+  scroll-snap-type: y mandatory;
+  height: 460px;
   background-color: rgb(241, 240, 240);
   margin-top: 20px;
 }
-

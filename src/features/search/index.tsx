@@ -1,8 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import ActionAreaCard from '../../shared/components/card';
 import { MetaHuman } from '../publisher/interface';
-import { useState, useEffect} from 'react';
-
+import { useState, useEffect } from 'react';
 
 export const SearchResults = () => {
   const location = useLocation();
@@ -21,11 +20,11 @@ export const SearchResults = () => {
             name: hero.name,
             powerstats: hero.powerstats,
             publisher: hero.biography.publisher,
-            imageSm: hero.images.sm
+            imageSm: hero.images.sm,
           }));
 
-          const filteredHeroes = extractedData.filter((hero) =>
-          hero.name.toLowerCase().includes(query?.toLowerCase() ?? '')
+          const filteredHeroes = extractedData.filter(hero =>
+            hero.name.toLowerCase().includes(query?.toLowerCase() ?? ''),
           );
 
           setFilteredMetaHumans(filteredHeroes);
@@ -59,5 +58,3 @@ export const SearchResults = () => {
     </div>
   );
 };
-
-

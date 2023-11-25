@@ -24,7 +24,13 @@ const style = {
   p: 4,
 };
 
-const CustomModal: React.FC<ModalProps> = ({ open, handleClose, name, description, image }) => {
+const CustomModal: React.FC<ModalProps> = ({
+  open,
+  handleClose,
+  name,
+  description,
+  image,
+}) => {
   return (
     <div>
       <Modal
@@ -41,8 +47,17 @@ const CustomModal: React.FC<ModalProps> = ({ open, handleClose, name, descriptio
           <Typography id="custom-modal-description" sx={{ mt: 2 }}>
             {description}
           </Typography>
-          <img src={image} alt={name} style={{ maxWidth: '100%', margin: '20px', marginLeft: '80px' }} />
-          <Button onClick={handleClose} style={{ marginTop: '10px', color: '#fdd406' }}>Fechar</Button>
+          <img
+            src={image}
+            alt={name}
+            style={{ maxWidth: '100%', margin: '20px', marginLeft: '80px' }}
+          />
+          <Button
+            onClick={handleClose}
+            style={{ marginTop: '10px', color: '#fdd406' }}
+          >
+            Fechar
+          </Button>
         </Box>
       </Modal>
     </div>

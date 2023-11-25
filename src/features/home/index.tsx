@@ -34,25 +34,27 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
-
-<div className={styles.contant}>
+      <div className={styles.contant}>
         {errorPopup && (
-        <div className="popup">
-          <p>Falha de comunicação com a API. Por favor, tente novamente mais tarde.</p>
-        </div>
-      )}
-      {heroes.length === 0 && <p>Carregando...</p>}
-      {heroes.map((hero, index) => (
-        <div key={index} className={styles.homeCard}>
-          <ActionAreaCard
-            name={hero.name}
-            image={hero.imageSm}
-            powerstats={hero.powerstats}
-          />
-        </div>
-      ))}
-</div>
-<h2>Arraste para o lado e conheça todos os nossos Meta Humanos...</h2>
+          <div className="popup">
+            <p>
+              Falha de comunicação com a API. Por favor, tente novamente mais
+              tarde.
+            </p>
+          </div>
+        )}
+        {heroes.length === 0 && <p>Carregando...</p>}
+        {heroes.map((hero, index) => (
+          <div key={index} className={styles.homeCard}>
+            <ActionAreaCard
+              name={hero.name}
+              image={hero.imageSm}
+              powerstats={hero.powerstats}
+            />
+          </div>
+        ))}
+      </div>
+      <h2>Arraste para o lado e conheça todos os nossos Meta Humanos...</h2>
     </div>
   );
 };
