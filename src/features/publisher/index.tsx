@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import ActionAreaCard from '../../shared/components/card';
 import { MetaHuman } from './interface';
 import styles from './styles.module.css';
+import gif from '../../shared/assets/gif.gif';
 
 export const Marvel = () => {
   const [heroes, setHeroes] = useState<MetaHuman[]>([]);
@@ -38,7 +39,7 @@ export const Marvel = () => {
 
   return (
     <div className={styles.container}>
-      {heroes.length === 0 && <p>Carregando...</p>}
+      {heroes.length === 0 && <img src={gif} alt="" />}
       {heroes.map((hero, index) => (
         <div key={index} className={styles.marvelCard}>
           <ActionAreaCard
@@ -87,7 +88,7 @@ export const DC = () => {
 
   return (
     <div className={styles.container}>
-      {heroes.length === 0 && <p>Carregando...</p>}
+      {heroes.length === 0 && <img src={gif} alt="" />}
       {heroes.map((hero, index) => (
         <div key={index} className={styles.dcCard}>
           <ActionAreaCard

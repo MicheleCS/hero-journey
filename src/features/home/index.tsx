@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import ActionAreaCard from '../../shared/components/card';
 import styles from './styles.module.css';
+import gif from '../../shared/assets/gif.gif';
 
 const Home = () => {
   const [heroes, setHeroes] = useState<any[]>([]);
@@ -43,7 +44,7 @@ const Home = () => {
             </p>
           </div>
         )}
-        {heroes.length === 0 && <p>Carregando...</p>}
+        {heroes.length === 0 && <img src={gif} alt="" />}
         {heroes.map((hero, index) => (
           <div key={index} className={styles.homeCard}>
             <ActionAreaCard

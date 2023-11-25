@@ -3,6 +3,7 @@ import ActionAreaCard from '../../shared/components/card';
 import styles from './styles.module.css';
 import { sumPowerstats } from '../../shared/components/sumPowerstats';
 import CustomModal from '../../shared/components/modal';
+import gif from '../../shared/assets/gif.gif';
 
 const Battle = () => {
   const [heroes, setHeroes] = useState<any[]>([]);
@@ -75,7 +76,7 @@ const Battle = () => {
 
   return (
     <div className={styles.battleContainer}>
-      {heroes.length === 0 && <p>Carregando...</p>}
+      {heroes.length === 0 && <img src={gif} alt="" />}
       {heroes.map((hero, index) => (
         <div
           key={index}
