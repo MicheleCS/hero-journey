@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext } from 'react';
 
 interface NavbarContextData {
   selected: string | null;
@@ -22,7 +22,9 @@ export const NavbarProvider = ({ children }: { children: React.ReactNode }) => {
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   return (
-    <NavbarContext.Provider value={{ selected, setSelected, searchQuery, setSearchQuery }}>
+    <NavbarContext.Provider
+      value={{ selected, setSelected, searchQuery, setSearchQuery }}
+    >
       {children}
     </NavbarContext.Provider>
   );

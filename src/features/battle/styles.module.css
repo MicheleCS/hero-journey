@@ -2,17 +2,16 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
- padding: 20px;
-  width: 100%;
+  padding: 20px;
+
+  justify-content: center;
 }
 
 .battleCard {
-  flex: 0 0 calc(25.33% - 20px);
   cursor: pointer;
   border: 1px solid #ccc;
-  border-radius: 8px; 
+  border-radius: 8px;
   transition: transform 0.3s ease;
-  padding-left: 60px;
 }
 
 .battleCard:hover {
@@ -21,7 +20,7 @@
 }
 
 .selected {
-  border-color: rgb(190, 12, 12); 
+  border-color: rgb(190, 12, 12);
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
   background-color: #fdd406;
 }

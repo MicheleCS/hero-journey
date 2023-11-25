@@ -7,7 +7,7 @@ import { CardActionArea } from '@mui/material';
 import styles from './styles.module.css';
 interface CardProps {
   name: string;
-  description: string;
+  description?: string;
   image: string;
   powerstats?: {
     intelligence?: number;
@@ -23,33 +23,27 @@ const ActionAreaCard: React.FC<CardProps> = ({
   name,
   description,
   image,
-  powerstats
+  powerstats,
 }: CardProps) => {
   return (
-    <Card sx={{ Width: 345 }} className={styles.card}>
+    <Card sx={{ Width: 345, height: 435 }} className={styles.card}>
       <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image={image}
-          alt={name}
-        />
+        <CardMedia component="img" height="140" image={image} alt={name} />
         <CardContent>
-          <Typography  component="div">
-            {name}
-          </Typography>
+          <Typography component="div">{name}</Typography>
           <Typography variant="body2" color="text.secondary">
             {description}
           </Typography>
           {powerstats && (
             <div>
-              <p>Powerstats:</p>
               <ul>
-                {Object.entries(powerstats).map(([stat, value]: [string, any]) => (
-                  <li key={stat}>
-                    {stat}: {value}
-                  </li>
-                ))}
+                {Object.entries(powerstats).map(
+                  ([stat, value]: [string, any]) => (
+                    <li key={stat}>
+                      {stat}: {value}
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
           )}
@@ -57,6 +51,6 @@ const ActionAreaCard: React.FC<CardProps> = ({
       </CardActionArea>
     </Card>
   );
-}
+};
 
 export default ActionAreaCard;

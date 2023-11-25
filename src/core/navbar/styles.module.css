@@ -6,11 +6,16 @@
   background-color: black;
   color: #fdd406;
 }
+
+.navbar img {
+  height: 80px;
+  width: 100px;
+}
+
 .navbar h3 {
   color: #fff;
   display: flex;
 }
-
 
 .links {
   display: flex;
@@ -31,7 +36,7 @@ form {
   align-items: center;
 }
 
-input[type="text"] {
+input[type='text'] {
   padding: 8px;
   margin-right: 10px;
   border-radius: 4px;
@@ -39,7 +44,7 @@ input[type="text"] {
   font-size: 14px;
 }
 
-button[type="submit"] {
+button[type='submit'] {
   padding: 8px 16px;
   background-color: #fdd406;
   color: #180808;
@@ -49,7 +54,6 @@ button[type="submit"] {
   font-size: 14px;
 }
 
-button[type="submit"]:hover {
+button[type='submit']:hover {
   background-color: rgba(254, 240, 38, 0.381);
 }
-

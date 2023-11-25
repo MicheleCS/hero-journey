@@ -3,7 +3,6 @@ import ActionAreaCard from '../../shared/components/card';
 import { MetaHuman } from './interface';
 import styles from './styles.module.css';
 
-
 export const Marvel = () => {
   const [heroes, setHeroes] = useState<MetaHuman[]>([]);
 
@@ -18,10 +17,12 @@ export const Marvel = () => {
             name: hero.name,
             powerstats: hero.powerstats,
             publisher: hero.biography.publisher,
-            imageSm: hero.images.sm
+            imageSm: hero.images.sm,
           }));
 
-          const marvelHeroes: MetaHuman[] = extractedData.filter((hero: MetaHuman) => hero.publisher === "Marvel Comics");
+          const marvelHeroes: MetaHuman[] = extractedData.filter(
+            (hero: MetaHuman) => hero.publisher === 'Marvel Comics',
+          );
 
           setHeroes(marvelHeroes);
         } else {
@@ -37,11 +38,11 @@ export const Marvel = () => {
 
   return (
     <div className={styles.container}>
+      {heroes.length === 0 && <p>Carregando...</p>}
       {heroes.map((hero, index) => (
         <div key={index} className={styles.marvelCard}>
           <ActionAreaCard
             name={hero.name}
-            description={hero.publisher}
             image={hero.imageSm}
             powerstats={hero.powerstats}
           />
@@ -65,10 +66,12 @@ export const DC = () => {
             name: hero.name,
             powerstats: hero.powerstats,
             publisher: hero.biography.publisher,
-            imageSm: hero.images.sm
+            imageSm: hero.images.sm,
           }));
 
-          const dcHeroes: MetaHuman[] = extractedData.filter((hero: MetaHuman) => hero.publisher === "DC Comics");
+          const dcHeroes: MetaHuman[] = extractedData.filter(
+            (hero: MetaHuman) => hero.publisher === 'DC Comics',
+          );
 
           setHeroes(dcHeroes);
         } else {
@@ -84,11 +87,11 @@ export const DC = () => {
 
   return (
     <div className={styles.container}>
+      {heroes.length === 0 && <p>Carregando...</p>}
       {heroes.map((hero, index) => (
         <div key={index} className={styles.dcCard}>
           <ActionAreaCard
             name={hero.name}
-            description={hero.publisher}
             image={hero.imageSm}
             powerstats={hero.powerstats}
           />
@@ -97,4 +100,3 @@ export const DC = () => {
     </div>
   );
 };
-

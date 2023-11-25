@@ -15,8 +15,8 @@ const Home = () => {
 
           const extractedData = data.map((hero: any) => ({
             name: hero.name,
-            publisher: hero.biography.publisher,
-            imageSm: hero.images.sm
+            imageSm: hero.images.sm,
+            powerstats: hero.powerstats,
           }));
 
           setHeroes(extractedData);
@@ -33,21 +33,28 @@ const Home = () => {
   }, []);
 
   return (
-    <div className={styles.homeContainer}>
+    <div className={styles.container}>
+      <div className={styles.contant}>
         {errorPopup && (
-        <div className="popup">
-          <p>Communication failure with the api. Please try again later.</p>
-        </div>
-      )}
-      {heroes.map((hero, index) => (
-        <div key={index} className={styles.homeCard}>
-          <ActionAreaCard
-            name={hero.name}
-            description={hero.publisher}
-            image={hero.imageSm}
-          />
-        </div>
-      ))}
+          <div className="popup">
+            <p>
+              Falha de comunicação com a API. Por favor, tente novamente mais
+              tarde.
+            </p>
+          </div>
+        )}
+        {heroes.length === 0 && <p>Carregando...</p>}
+        {heroes.map((hero, index) => (
+          <div key={index} className={styles.homeCard}>
+            <ActionAreaCard
+              name={hero.name}
+              image={hero.imageSm}
+              powerstats={hero.powerstats}
+            />
+          </div>
+        ))}
+      </div>
+      <h2>Arraste para o lado e conheça todos os nossos Meta Humanos...</h2>
     </div>
   );
 };
