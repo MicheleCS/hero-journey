@@ -3,7 +3,7 @@ import ActionAreaCard from '../../shared/components/card';
 import styles from './styles.module.css';
 import { sumPowerstats } from '../../shared/components/sumPowerstats';
 import CustomModal from '../../shared/components/modal';
-
+import gif from '../../shared/assets/gif.gif';
 
 const Battle = () => {
   const [heroes, setHeroes] = useState<any[]>([]);
@@ -22,7 +22,7 @@ const Battle = () => {
             name: hero.name,
             powerstats: hero.powerstats,
             publisher: hero.biography.publisher,
-            imageSm: hero.images.sm
+            imageSm: hero.images.sm,
           }));
 
           setHeroes(extractedData);
@@ -53,8 +53,14 @@ const Battle = () => {
     if (selectedHeroes.length === 2) {
       const totalPowerstats = sumPowerstats(selectedHeroes);
 
-      const score1 = totalPowerstats.intelligence + totalPowerstats.strength + totalPowerstats.speed;
-      const score2 = totalPowerstats.durability + totalPowerstats.power + totalPowerstats.combat;
+      const score1 =
+        totalPowerstats.intelligence +
+        totalPowerstats.strength +
+        totalPowerstats.speed;
+      const score2 =
+        totalPowerstats.durability +
+        totalPowerstats.power +
+        totalPowerstats.combat;
 
       if (score1 > score2) {
         return `${selectedHeroes[0].name} Venceu!`;
@@ -70,11 +76,13 @@ const Battle = () => {
 
   return (
     <div className={styles.battleContainer}>
-      {heroes.length === 0 && <p>Carregando...</p>}
+      {heroes.length === 0 && <img src={gif} alt="" />}
       {heroes.map((hero, index) => (
         <div
           key={index}
-          className={`${styles.battleCard} ${selectedHeroes.includes(hero) ? styles.selected : ''}`}
+          className={`${styles.battleCard} ${
+            selectedHeroes.includes(hero) ? styles.selected : ''
+          }`}
           onClick={() => handleHeroSelect(hero)}
         >
           <ActionAreaCard
@@ -89,8 +97,8 @@ const Battle = () => {
           open={true}
           handleClose={() => {
             setWinnerDetails(null);
-            setSelectedHeroes([]); 
-            setWinner(''); 
+            setSelectedHeroes([]);
+            setWinner('');
           }}
           name={winner}
           description={winnerDetails.publisher}

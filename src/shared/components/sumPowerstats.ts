@@ -5,10 +5,10 @@ export const sumPowerstats = (heroes: any[]) => {
     speed: 0,
     durability: 0,
     power: 0,
-    combat: 0
+    combat: 0,
   };
 
-  heroes.forEach((hero) => {
+  heroes.forEach(hero => {
     for (const stat in hero.powerstats) {
       totalPowerstats[stat] += hero.powerstats[stat];
     }
@@ -16,5 +16,3 @@ export const sumPowerstats = (heroes: any[]) => {
 
   return totalPowerstats;
 };
-
-
